@@ -9,6 +9,16 @@ edition = "2018"
 [dependencies]
 async-trait = "0.1.42"
 thiserror = "1.0.22"
+serde_json = "1.0.59"
 
 [dependencies.tokio]
 version = "0.2.22"
+features = ["macros", "test-util"]
+
+[dependencies.reqwest]
+version = "0.10.9"
+features = ["json"]
+
+[dependencies.serde]
+version = "1.0.117"
+features = ["derive"]

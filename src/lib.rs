@@ -1,4 +1,5 @@
 mod error;
+pub mod gelbooru;
 
 use async_trait::async_trait;
 
@@ -14,5 +15,6 @@ pub trait Booru {
         &self,
         tags: &[&str],
         page: usize,
-    ) -> Result<Vec<Self::Post>, Box<dyn std::error::Error>>;
+        limit: usize,
+    ) -> Result<Vec<Self::Post>, BooruError>;
 }
