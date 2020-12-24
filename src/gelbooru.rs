@@ -1,4 +1,4 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use async_trait::async_trait;
 use reqwest::{Client, RequestBuilder};
 
@@ -94,7 +94,7 @@ impl GelbooruBuilder {
 }
 
 /// Representation of a Gelbooru post.
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GelbooruPost {
     pub source: String,
     pub directory: String,
@@ -116,7 +116,7 @@ pub struct GelbooruPost {
     pub created_at: String,
 }
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum GelbooruRating {
     #[serde(rename = "e")]
     Explicit,
